@@ -1,0 +1,85 @@
+.gradient-text {
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.vsl-container {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-mental {
+    border-left: 4px solid #3b82f6;
+}
+
+.category-physical {
+    border-left: 4px solid #10b981;
+}
+
+.category-social {
+    border-left: 4px solid #f59e0b;
+}
+
+.category-financial {
+    border-left: 4px solid #ef4444;
+}
+
+.category-spiritual {
+    border-left: 4px solid #8b5cf6;
+}
+
+.tab-btn {
+    transition: all 0.3s ease;
+    color: #9ca3af; /* gris para tabs inactivas */
+}
+
+.tab-active {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 3px solid #3b82f6;
+    color: #ffffff; /* blanco para tab activa */
+}
+
+.content-panel {
+    display: none;
+}
+
+.content-panel.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.intensity-basic:hover { background-color: rgba(16, 185, 129, 0.2); }
+.intensity-intermediate:hover { background-color: rgba(245, 158, 11, 0.2); }
+.intensity-advanced:hover { background-color: rgba(239, 68, 68, 0.2); }
+
+.learning-audio:hover { background-color: rgba(59, 130, 246, 0.2); }
+.learning-text:hover { background-color: rgba(139, 92, 246, 0.2); }
+.learning-challenges:hover { background-color: rgba(245, 158, 11, 0.2); }
+.learning-reflection:hover { background-color: rgba(16, 185, 129, 0.2); }
