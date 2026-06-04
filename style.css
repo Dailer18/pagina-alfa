@@ -1,46 +1,72 @@
-.gradient-text {
-    background: linear-gradient(90deg, #3b82f6, #10b981);
+/* Estilo Estoico y Masculino */
+
+/* Tipografía */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* Gradiente sutil en tonos grises/plateados */
+.stoic-gradient {
+    background: linear-gradient(90deg, #9ca3af, #d1d5db, #9ca3af);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s ease-in-out infinite;
 }
 
+@keyframes shimmer {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+/* Contenedor VSL con borde sutil */
 .vsl-container {
-    background: linear-gradient(135deg, #111827, #1f2937);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #0a0a0a, #171717);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-.category-mental {
-    border-left: 4px solid #3b82f6;
-}
-
-.category-physical {
-    border-left: 4px solid #10b981;
-}
-
-.category-social {
-    border-left: 4px solid #f59e0b;
-}
-
-.category-financial {
-    border-left: 4px solid #ef4444;
-}
-
+/* Categorías con borde lateral gris acero */
+.category-mental,
+.category-physical,
+.category-social,
+.category-financial,
 .category-spiritual {
-    border-left: 4px solid #8b5cf6;
+    border-left: 2px solid #4b5563;
+    transition: all 0.3s ease;
 }
 
+.category-mental:hover,
+.category-physical:hover,
+.category-social:hover,
+.category-financial:hover,
+.category-spiritual:hover {
+    background-color: rgba(75, 85, 99, 0.15);
+    border-left-color: #6b7280;
+}
+
+/* Tabs minimalistas */
 .tab-btn {
     transition: all 0.3s ease;
-    color: #9ca3af; /* gris para tabs inactivas */
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+}
+
+.tab-btn:hover {
+    color: #9ca3af;
 }
 
 .tab-active {
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 3px solid #3b82f6;
-    color: #ffffff; /* blanco para tab activa */
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 2px solid #9ca3af;
+    color: #e5e7eb;
 }
 
+/* Paneles de contenido */
 .content-panel {
     display: none;
 }
@@ -55,16 +81,31 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-.pulse {
-    animation: pulse 2s infinite;
+/* Badge estilo estoico */
+.stoic-badge {
+    background: rgba(31, 41, 55, 0.5);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+.stoic-badge:hover {
+    background: rgba(55, 65, 81, 0.7);
+    border-color: #4b5563;
+    color: #d1d5db;
 }
 
+/* Pulso sutil y elegante */
+.pulse-stoic {
+    animation: pulseStoic 3s infinite;
+}
+
+@keyframes pulseStoic {
+    0% { box-shadow: 0 0 0 0 rgba(156, 163, 175, 0.3); }
+    70% { box-shadow: 0 0 0 20px rgba(156, 163, 175, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(156, 163, 175, 0); }
+}
+
+/* Indicador de scroll */
 .scroll-indicator {
     animation: bounce 2s infinite;
 }
@@ -75,11 +116,71 @@
     60% { transform: translateY(-5px); }
 }
 
-.intensity-basic:hover { background-color: rgba(16, 185, 129, 0.2); }
-.intensity-intermediate:hover { background-color: rgba(245, 158, 11, 0.2); }
-.intensity-advanced:hover { background-color: rgba(239, 68, 68, 0.2); }
+/* Intensidad - tonos monocromáticos */
+.intensity-basic {
+    border-color: rgba(107, 114, 128, 0.4);
+}
 
-.learning-audio:hover { background-color: rgba(59, 130, 246, 0.2); }
-.learning-text:hover { background-color: rgba(139, 92, 246, 0.2); }
-.learning-challenges:hover { background-color: rgba(245, 158, 11, 0.2); }
-.learning-reflection:hover { background-color: rgba(16, 185, 129, 0.2); }
+.intensity-basic:hover {
+    background-color: rgba(107, 114, 128, 0.15);
+    border-color: rgba(156, 163, 175, 0.6);
+}
+
+.intensity-intermediate {
+    border-color: rgba(107, 114, 128, 0.4);
+}
+
+.intensity-intermediate:hover {
+    background-color: rgba(107, 114, 128, 0.15);
+    border-color: rgba(156, 163, 175, 0.6);
+}
+
+.intensity-advanced {
+    border-color: rgba(107, 114, 128, 0.4);
+}
+
+.intensity-advanced:hover {
+    background-color: rgba(107, 114, 128, 0.15);
+    border-color: rgba(156, 163, 175, 0.6);
+}
+
+/* Estilos de aprendizaje - monocromático */
+.learning-audio,
+.learning-text,
+.learning-challenges,
+.learning-reflection {
+    border-color: rgba(107, 114, 128, 0.4);
+}
+
+.learning-audio:hover,
+.learning-text:hover,
+.learning-challenges:hover,
+.learning-reflection:hover {
+    background-color: rgba(107, 114, 128, 0.15);
+    border-color: rgba(156, 163, 175, 0.6);
+}
+
+/* Preferencias de enfoque - estilo sobrio */
+.border-opacity-30:hover {
+    background-color: rgba(55, 65, 81, 0.3);
+    border-color: rgba(107, 114, 128, 0.6);
+}
+
+/* Textos enfatizados */
+.font-medium {
+    color: #d1d5db;
+}
+
+.font-bold {
+    color: #e5e7eb;
+}
+
+/* Ajustes adicionales para la estética estoica */
+body {
+    background-color: #000;
+}
+
+/* Suavizar transiciones generales */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
