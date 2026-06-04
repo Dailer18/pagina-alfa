@@ -16,9 +16,52 @@ h1, h2, h3, h4 {
     animation: shimmer 3s ease-in-out infinite;
 }
 
-@keyframes shimmer {
+/* Gradiente dorado elegante */
+.gold-gradient-text {
+    background: linear-gradient(135deg, #d4af37, #f4e5b0, #c9a959, #d4af37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shimmerGold 4s ease-in-out infinite;
+}
+
+@keyframes shimmerGold {
     0%, 100% { background-position: 0% center; }
     50% { background-position: 100% center; }
+}
+
+/* Badge dorado */
+.gold-badge {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.gold-badge:hover {
+    border-color: rgba(212, 175, 55, 0.6);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+}
+
+/* Botón dorado */
+.gold-button {
+    background: linear-gradient(135deg, #d4af37, #b8962e, #d4af37);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.gold-button:hover {
+    background: linear-gradient(135deg, #e5c156, #c9a959, #e5c156);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Gradiente vertical dorado */
+.gold-gradient-vertical {
+    background: linear-gradient(180deg, transparent, #d4af37, transparent);
 }
 
 /* Contenedor VSL con borde sutil */
@@ -28,14 +71,15 @@ h1, h2, h3, h4 {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Categorías con borde lateral gris acero */
+/* Categorías con borde lateral estilo mejorado */
 .category-mental,
 .category-physical,
 .category-social,
 .category-financial,
 .category-spiritual {
-    border-left: 2px solid #4b5563;
+    border-left: 3px solid #4b5563;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .category-mental:hover,
@@ -43,17 +87,20 @@ h1, h2, h3, h4 {
 .category-social:hover,
 .category-financial:hover,
 .category-spiritual:hover {
-    background-color: rgba(75, 85, 99, 0.15);
-    border-left-color: #6b7280;
+    background-color: rgba(212, 175, 55, 0.05);
+    border-left-color: #d4af37;
+    transform: translateX(5px);
 }
 
-/* Tabs minimalistas */
+/* Tabs minimalistas con estilo mejorado */
 .tab-btn {
     transition: all 0.3s ease;
     color: #6b7280;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     font-size: 0.875rem;
+    position: relative;
+    border-bottom: 2px solid transparent;
 }
 
 .tab-btn:hover {
@@ -61,9 +108,18 @@ h1, h2, h3, h4 {
 }
 
 .tab-active {
-    background: rgba(255, 255, 255, 0.03);
-    border-bottom: 2px solid #9ca3af;
-    color: #e5e7eb;
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+}
+
+.tab-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
 }
 
 /* Paneles de contenido */
@@ -81,17 +137,19 @@ h1, h2, h3, h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Badge estilo estoico */
+/* Badge estilo estoico mejorado */
 .stoic-badge {
     background: rgba(31, 41, 55, 0.5);
     backdrop-filter: blur(4px);
     transition: all 0.3s ease;
+    border: 1px solid rgba(75, 85, 99, 0.5);
 }
 
 .stoic-badge:hover {
     background: rgba(55, 65, 81, 0.7);
-    border-color: #4b5563;
-    color: #d1d5db;
+    border-color: #d4af37;
+    color: #f4e5b0;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 /* Pulso sutil y elegante */
@@ -105,25 +163,16 @@ h1, h2, h3, h4 {
     100% { box-shadow: 0 0 0 0 rgba(156, 163, 175, 0); }
 }
 
-/* Indicador de scroll */
-.scroll-indicator {
-    animation: bounce 2s infinite;
-}
+/* Indicador de scroll - eliminado ya que no se usa en el nuevo diseño */
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
-/* Intensidad - tonos monocromáticos */
+/* Intensidad - tonos monocromáticos con detalles dorados */
 .intensity-basic {
     border-color: rgba(107, 114, 128, 0.4);
 }
 
 .intensity-basic:hover {
-    background-color: rgba(107, 114, 128, 0.15);
-    border-color: rgba(156, 163, 175, 0.6);
+    background-color: rgba(212, 175, 55, 0.05);
+    border-color: #d4af37;
 }
 
 .intensity-intermediate {
@@ -131,8 +180,8 @@ h1, h2, h3, h4 {
 }
 
 .intensity-intermediate:hover {
-    background-color: rgba(107, 114, 128, 0.15);
-    border-color: rgba(156, 163, 175, 0.6);
+    background-color: rgba(212, 175, 55, 0.05);
+    border-color: #d4af37;
 }
 
 .intensity-advanced {
@@ -140,11 +189,11 @@ h1, h2, h3, h4 {
 }
 
 .intensity-advanced:hover {
-    background-color: rgba(107, 114, 128, 0.15);
-    border-color: rgba(156, 163, 175, 0.6);
+    background-color: rgba(212, 175, 55, 0.05);
+    border-color: #d4af37;
 }
 
-/* Estilos de aprendizaje - monocromático */
+/* Estilos de aprendizaje con detalles dorados */
 .learning-audio,
 .learning-text,
 .learning-challenges,
@@ -156,8 +205,8 @@ h1, h2, h3, h4 {
 .learning-text:hover,
 .learning-challenges:hover,
 .learning-reflection:hover {
-    background-color: rgba(107, 114, 128, 0.15);
-    border-color: rgba(156, 163, 175, 0.6);
+    background-color: rgba(212, 175, 55, 0.05);
+    border-color: #d4af37;
 }
 
 /* Preferencias de enfoque - estilo sobrio */
